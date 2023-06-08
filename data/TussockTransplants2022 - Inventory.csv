@@ -1,0 +1,207 @@
+Site,Exp,Src,Rep,Yr,Plot,Harvested,OTC,RootImaging,PhenoCam,iButtons,Lighting/shading,RNA*,Status_A,Status_B,Status_C
+SG,OTC,CF,1,,CF1,,1,1,,B,,,Happy,happy,happy
+SG,OTC,CF,2,,CF2,,,1,,B,,,happy,happy,happy
+SG,OTC,TL,1,,TL1,,1,1,,,,,okay,,
+SG,OTC,CF,4,,CF4,1,,,,,,,,,
+SG,OTC,TL,2,,TL2,,,1,1,,,,happy,sad,happy
+SG,OTC,SG,1,,SG1,,1,1,,C,,,very sad,sad,happy
+SG,OTC,SG,2,,SG2,,,1,1,C,,,okay/happy,happy,very sad
+SG,OTC,CF,3,,CF3,1,1,,,,,,,happy,happy
+SG,OTC,TL,3,,TL3,,1,,,,,,happy,,
+SG,OTC,CF,10,,CF10,1,,,,,,,,,
+SG,OTC,SG,3,,SG3,,,,,,,,okay,happy,sad
+SG,OTC,SG,4,,SG4,,1,,,,,,happy,happy,sad
+SG,OTC,TL,4,,TL4,,,,,,,,okay,sad,okay
+SG,OTC,CF,6,,CF6,,1,1,,,,,happy,happy,very happy
+SG,OTC,TL,6,,TL6,,1,1,,A,,,sad,okay,okay
+SG,OTC,CF,5,,CF5,,,1,,,,,happy,happy,happy
+SG,OTC,SG,6,,SG6,,1,1,,,,,okay,okay,sad
+SG,OTC,TL,5,,TL5,,,1,,B,,,sad,sad,very happy
+SG,OTC,SG,5,,SG5,,,1,,,,,happy,sad,sad
+SG,OTC,TL,7,,TL7,,1,,,,,,okay,very happy,happy
+SG,OTC,SG,7,,SG7,1,1,,,,,,,very happy,okay
+SG,OTC,CF,7,,CF7,,,,1,B,,,okay,happy,happy
+SG,OTC,CF,8,,CF8,,1,,,A,,,happy,happy,happy
+SG,OTC,TL,8,,TL8,,,,,,,,happy,happy,happy
+SG,OTC,SG,10,,SG10,,,,,,,,happy,happy,okay
+SG,OTC,CF,9,,CF9,1,1,,,,,,,happy,happy
+SG,OTC,TL,9,,TL9,1,1,,,,,,,okay,sad/okay
+SG,OTC,CF,11,,CF11,,,,,,,,sad,happy,unhappy
+SG,OTC,SG,9,,SG9,,1,,,,,,happy,,
+SG,OTC,TL,10,,TL10,1,,,,,,,,,
+SG,OTC,TL,11,,TL11,,,,,,,,okay,sad,happy
+SG,OTC,CF,12,,CF12,,1,,,,,,sad,sad,happy
+SG,OTC,SG,11,,SG11,,,,1,,,,happy,happy,happy
+SG,OTC,TL,12,,TL12,,1,,,,,,sad,very happy,very happy
+SG,OTC,SG,12,,SG12,,1,,,,,,happy,happy,happy
+SG,OTC,CF,13,,CF13,,,1,,,,,sad,happy,very happy
+SG,OTC,TL,13,,TL13,,,1,,C,,,happy,happy,happy
+SG,OTC,SG,13,,SG13,,1,1,,C,,,okay,okay,very happy
+SG,OTC,CF,14,,CF14,,1,1,,,,,sad,,
+SG,OTC,TL,20,,TL20,1,,,,,,,,,
+SG,OTC,TL,14,,TL14,,1,1,,C,,,very happy,okay,happy
+SG,OTC,SG,14,,SG14,,,1,,B,,,sad,happy,happy
+SG,OTC,CF,16,,CF16,,,,1,,,,happy,happy,happy
+SG,OTC,CF,15,,CF15,,1,,,,,,okay,happy,happy
+SG,OTC,TL,16,,TL16,,,,1,C,,,sad,happy,happy
+SG,OTC,TL,15,,TL15,,1,,,B,,,okay,happy,okay
+SG,OTC,SG,15,,SG15,1,1,,,,,,,,
+SG,OTC,SG,8,,SG8,1,,,,,,,,,
+SG,OTC,CF,17,,CF17,,1,,,C,,,okay,happy,happy
+SG,OTC,TL,17,,TL17,,,,1,,,,happy,happy,happy
+SG,OTC,SG,17,,SG17,,,,1,,,,very happy,happy,happy
+SG,OTC,TL,18,,TL18,,1,,,,,,happy,happy,okay
+SG,OTC,SG,18,,SG18,,1,,,,,,happy,okay,okay
+SG,OTC,CF,18,,CF18,,,,1,B,,,sad/gone,sad,happy
+SG,OTC,TL,19,,TL19,1,1,,,,,,,,
+SG,OTC,SG,16,,SG16,1,,,,,,,,,
+SG,OTC,CF,19,,CF19,,,,,,,,sad,okay,happy
+SG,OTC,CF,20,,CF20,,1,,,,,,okay,happy,happy
+SG,OTC,SG,19,,SG19,,,,,A,,,okay,okay,sad/gone
+SG,OTC,SG,20,,SG20,,1,,,A,,,okay,very happy,very happy
+SG,CG,PB,1,,PB1,,,,,,,,,,
+SG,CG,PB,2,,PB2,,,,1,,,,,,
+SG,CG,PB,3,,PB3,,,,,,,,,,
+SG,CG,PB,4,,PB4,,,,,,,,,,
+SG,CG,PB,5,,PB5,,,,1,,,,,,
+SG,CG,PB,6,,PB6,,,,,,,,,,
+SG,CG,PB,7,,PB7,,,,1,,,,,,
+SG,CG,PB,8,,PB8,,,,,,,,,,
+TL,OTC,CF,1,,CF1,,1,1,,A,,,very happy,very happy,very happy
+TL,CG,PB,1,,PB1,,,,,,,,,,
+TL,OTC,SG,1,,SG1,,1,,,,,,happy,very happy,"was destroyed by voles, only 2 tillers left"
+TL,OTC,TL,1,,TL1,,1,1,,,,,very sad,sad,"sad/okay, potentially could be sampled"
+TL,OTC,CF,2,,CF2,,,1,1,C,,,Happy,Very Happy,Very Happy
+TL,OTC,SG,2,,SG2,,,,,,1,,Sad/okay,Sad,"okay, could be sampled"
+TL,OTC,TL,2,,TL2,,,1,1,C,,,happy,Sad/Okay,Sad/gone
+TL,OTC,CF,3,,CF3,,1,,,,,,very good,sad/okay taken over by shrubs,very good
+TL,OTC,SG,3,,SG3,,,,,C,1,,Sad/okay,sad,sad/okay
+TL,OTC,TL,3,,TL3,,1,,,C,,,okay/happy,okay/sad,sad and vole damage
+TL,OTC,CF,4,,CF4,,,,,A,,,Sad/okay,happy,okay/happy
+TL,OTC,SG,4,,SG4,,1,,,C,,,very sad,mostly gone,okay/happy
+TL,OTC,TL,4,,TL4,,,,,B,1,,sad,sad,sad
+TL,OTC,CF,5,,CF5,,,1,1,A,,,very happy,very happy,Okay
+TL,OTC,SG,5,,SG5,,,1,,C,1,,sad,sad,sad/okay 
+TL,OTC,TL,5,,TL5,,,1,,A,1,,happy,sad,sad
+TL,OTC,CF,6,,CF6,,1,1,,C,,,sad,happy,happy
+TL,OTC,SG,6,,SG6,,1,1,,A,,,okay/happy,happy,okay
+TL,OTC,TL,6,,TL6,,1,1,,B,,,happy,happy,happy
+TL,OTC,CF,7,,CF7,,,,,B,1,,sad,happy,happy
+TL,OTC,SG,7,,SG7,,1,1,,,,,sad,sad/gone,sad
+TL,OTC,TL,7,,TL7,,1,,,,,,okay/happy,sad/okay,okay/happy
+TL,OTC,CF,8,,CF8,,1,,,,,,sad,sad/dying,very happy
+TL,OTC,SG,8,,SG8,,,1,1,A,,,sad,okay/happy,happy
+TL,OTC,TL,8,,TL8,,,,,,,,happy,sad/okay,okay/happy
+TL,OTC,CF,9,,CF9,,1,,,,,,okay,okay,very happy
+TL,OTC,SG,9,,SG9,,1,,,,,,happy,"gone, destroyed by voles",happy
+TL,OTC,TL,9,,TL9,,1,,,,,,okay,sad,sad
+TL,OTC,CF,10,,CF10,,,,,,1,,happy,okay,happy
+TL,OTC,SG,10,,SG10,,,,1,A,,,sad,Okay,okay/happy
+TL,OTC,TL,10,,TL10,,,,,,1,,okay,sad,sad
+TL,OTC,CF,11,,CF11,1,,,,,,,,,
+TL,OTC,SG,11,,SG11,,,,1,C,,,happy,happy,happy
+TL,OTC,TL,11,,TL11,1,,,,,,,,,
+TL,OTC,CF,12,,CF12,1,1,,,,,,,,
+TL,CG,PB,2,,PB2,,,,1,,,,,,
+TL,OTC,SG,12,,SG12,,1,,,B,,,sad/okay,sad/okay,happy
+TL,OTC,TL,12,,TL12,1,1,,,,,,,,
+TL,OTC,CF,13,,CF13,,,1,,C,1,,very sad,very sad,very sad
+TL,OTC,SG,13,,SG13,,1,1,,,,,happy,sad,happy
+TL,OTC,TL,13,,TL13,,,1,,A,1,,sad,sad,sad
+TL,OTC,CF,14,,CF14,,1,1,,B,,,very happy,very happy,very happy
+TL,CG,PB,3,,PB3,,,,1,,,,,,
+TL,OTC,SG,14,,SG14,,,1,,,,,happy,happy,highly damaged by voles and taken over by other plants
+TL,OTC,TL,14,,TL14,,1,1,,C,,,okay/happy,"sad, destroyed by voles",okay/happy
+TL,OTC,CF,15,,CF15,,1,,,,,,"sad/okay, taken over by forbes and lichens","sad/okay, taken over by forbes and lichens","sad/okay, taken over by forbes and lichens"
+TL,CG,PB,4,,PB4,,,,1,,,,,,
+TL,OTC,SG,15,,SG15,1,1,,,,,,,,
+TL,OTC,TL,15,,TL15,1,1,,,,,,,,
+TL,OTC,CF,16,,CF16,,,,1,,,,okay/happy,okay,okay
+TL,CG,PB,5,,PB5,,,,,,,,,,
+TL,OTC,SG,16,,SG16,1,,,,,,,,,
+TL,OTC,TL,16,,TL16,1,,,,,,,,,
+TL,OTC,CF,17,,CF17,1,1,,,,,,,,
+TL,CG,PB,6,,PB6,,,,,,,,,,
+TL,OTC,SG,17,,SG17,1,,,,,,,,,
+TL,OTC,TL,17,,TL17,,,,1,B,,,happy,very sad,happy
+TL,OTC,CF,18,,CF18,1,,,,,,,,,
+TL,CG,PB,7,,PB7,,,,,,,,,,
+TL,OTC,SG,18,,SG18,1,1,,,,,,,,
+TL,OTC,TL,18,,TL18,,1,,,,,,sad/okay and taken over by forbes,Very happy,Sad
+TL,OTC,CF,19,,CF19,,,,,B,1,,very happy,okay/happy,very happy
+TL,CG,PB,8,,PB8,,,,,,,,,,
+TL,OTC,SG,19,,SG19,,,,,A,1,,"sad, taken over by sedge and forbes","sad, taken over by sedge and forbes","sad, taken over by sedge and forbes"
+TL,OTC,TL,19,,TL19,,,,1,B,,,Happy,"okay, cut in half by voles",Happy
+TL,OTC,CF,20,,CF20,,1,,,C,,,sad/okay and taken by forbes,sad/okay and taken by forbes,Okay/happy
+TL,OTC,SG,20,,SG20,,1,,,C,,,happy,happy,happy
+TL,OTC,TL,20,,TL20,,1,,,A,,,almost completely destroyed by voles (found only 2 tillers),almost completely destroyed by voles,happy
+CF,CG,CF,1,,CF1,,,,,,1,,okay,okay,almost gone
+CF,CG,CF,2,,CF2,,,,,B,1,,happy,happy,happy
+CF,CG,CF,3,,CF3,,,,1,B,,,very sad,happy,okay  
+CF,CG,CF,4,,CF4,,,,,,1,,sad,happy,very happy
+CF,CG,CF,5,,CF5,1,,,,,,,,,
+CF,CG,CF,6,,CF6,,,,1,A,,,happy,okay,happy
+CF,CG,CF,7,,CF7,,,,,B,1,,happy,okay,happy
+CF,CG,CF,8,,CF8,1,,,,,,,,,
+CF,CG,CF,9,,CF9,,,,1,C,,,happy,happy,sad
+CF,CG,CF,10,,CF10,,,,,,,,happy,"dead, vole damage","dead, vole damage"
+CF,CG,TL,1,,TL1,,,,1,B,,,sad,happy,very sad
+CF,CG,TL,2,,TL2,,,,,,,,okay/happy,okay/happy,okay/happy
+CF,CG,TL,3,,TL3,,,,1,A,,,okay,happy,sad
+CF,CG,TL,4,,TL4,,,,1,B,,,okay,happy,happy
+CF,CG,TL,5,,TL5,,,,,C,1,,very sad,okay,very sad
+CF,CG,TL,6,,TL6,1,,,,,,,,,
+CF,CG,TL,7,,TL7,1,,,,,,,,,
+CF,CG,TL,8,,TL8,,,,,,1,,okay,sad,okay
+CF,CG,TL,9,,TL9,,,,,A,1,,very sad,sad/gone,okay
+CF,CG,TL,10,,TL10,,,,,,1,,okay,sad,sad
+CF,CG,SG,1,,SG1,,,,,,1,,"sad, taken over by moss",sad,"sad, taken over by moss"
+CF,CG,SG,2,,SG2,,,,1,A,,,sad,sad,sad
+CF,CG,SG,3,,SG3,,,,1,B,,,sad,sad,sad
+CF,CG,SG,4,,SG4,,,,,,1,,sad,okay,okay
+CF,CG,SG,5,,SG5,,,,,C,1,,"sad, taken over by moss","sad, overtaken by moss",okay/happy
+CF,CG,SG,6,,SG6,,,,,C,1,,sad,sad,okay
+CF,CG,SG,7,,SG7,,,,1,C,,,happy,happy,sad
+CF,CG,SG,8,,SG8,1,,,,,,,,,
+CF,CG,SG,9,,SG9,1,,,,,,,,,
+CF,CG,SG,10,,SG10,,,,,,,,okay,okay,okay
+CF,CG,PB,1,,PB1,,,,,,,,,,
+CF,CG,PB,2,,PB2,,,,1,B,,,,,
+CF,CG,PB,3,,PB3,,,,1,B,,,,,
+CF,CG,PB,4,,PB4,,,,,,,,,,
+CF,CG,PB,5,,PB5,,,,,,,,,,
+CF,CG,PB,6,,PB6,,,,,,,,,,
+CF,CG,PB,7,,PB7,,,,1,B,,,"Camera initially assigned for PB8, which was quite sad, so we switched it to PB7",,
+CF,CG,PB,8,,PB8,,,,,,,,,,
+PB,CG,CF,1,,CF1,,,,,,,,,,
+PB,CG,CF,2,,CF2,,,,1,1,,,,,
+PB,CG,CF,3,,CF3,,,,,,,,,,
+PB,CG,CF,4,,CF4,,,,1,1,,,,,
+PB,CG,CF,5,,CF5,,,,,,,,,,
+PB,CG,CF,6,,CF6,,,,1,1,,,,,
+PB,CG,CF,7,,CF7,,,,,,,,,,
+PB,CG,CF,8,,CF8,,,,,,,,,,
+PB,CG,PB,1,,PB1,,,,,,,,,,
+PB,CG,PB,2,,PB2,,,,,,,,,,
+PB,CG,PB,3,,PB3,,,,,,,,,,
+PB,CG,PB,4,,PB4,,,,,,,,,,
+PB,CG,PB,5,,PB5,,,,1,1,,,,,
+PB,CG,PB,6,,PB6,,,,1,1,,,,,
+PB,CG,PB,7,,PB7,,,,1,1,,,,,
+PB,CG,PB,8,,PB8,,,,,,,,,,
+PB,CG,SG,1,,SG1,,,,,,,,,,
+PB,CG,SG,2,,SG2,,,,1,1,,,,,
+PB,CG,SG,3,,SG3,,,,1,1,,,,,
+PB,CG,SG,4,,SG4,,,,,,,,,,
+PB,CG,SG,5,,SG5,,,,1,1,,,,,
+PB,CG,SG,6,,SG6,,,,,,,,,,
+PB,CG,SG,7,,SG7,,,,,,,,,,
+PB,CG,SG,8,,SG8,,,,,,,,,,
+PB,CG,TL,1,,TL1,,,,1,1,,,,,
+PB,CG,TL,2,,TL2,,,,,,,,,,
+PB,CG,TL,3,,TL3,,,,,,,,,,
+PB,CG,TL,4,,TL4,,,,1,1,,,,,
+PB,CG,TL,5,,TL5,,,,1,1,,,,,
+PB,CG,TL,6,,TL6,,,,,,,,,,
+PB,CG,TL,7,,TL7,,,,,,,,,,
+PB,CG,TL,8,,TL8,,,,,,,,,,
