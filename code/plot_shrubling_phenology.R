@@ -14,7 +14,7 @@ treatment_key <- read_sheet("https://docs.google.com/spreadsheets/d/1PL6d-5xT28o
          Nutrients = str_detect(Treatment, "N"))
 
 raw_data <- read_sheet("https://docs.google.com/spreadsheets/d/16xVSdXF8od_3aEwJrQ4FrA0SO1amAKwxkJEBk99hdVM/edit?usp=drive_link",
-                       col_types = "dccddDDc")
+                       col_types = "dccddDDcc")
 
 # Reshaping 
 clean_data <- raw_data %>% 
@@ -82,3 +82,4 @@ treatment_colors <- c("black","chartreuse4","deepskyblue2", "aquamarine3","magen
     scale_color_manual(values = c("black", "chartreuse4")) + 
 
     facet_grid(Species ~ Phase))
+

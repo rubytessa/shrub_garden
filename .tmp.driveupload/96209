@@ -1,0 +1,45 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand\HyperFirstAtBeginDocument{\AtBeginDocument}
+\HyperFirstAtBeginDocument{\ifx\hyper@anchor\@undefined
+\global\let\oldnewlabel\newlabel
+\gdef\newlabel#1#2{\newlabelxx{#1}#2}
+\gdef\newlabelxx#1#2#3#4#5#6{\oldnewlabel{#1}{{#2}{#3}}}
+\AtEndDocument{\ifx\hyper@anchor\@undefined
+\let\newlabel\oldnewlabel
+\fi}
+\fi}
+\global\let\hyper@last\relax 
+\gdef\HyperFirstAtBeginDocument#1{#1}
+\providecommand\HyField@AuxAddToFields[1]{}
+\providecommand\HyField@AuxAddToCoFields[2]{}
+\@writefile{toc}{\contentsline {subsection}{Description}{1}{section*.1}\protected@file@percent }
+\newlabel{description}{{}{1}{Description}{section*.1}{}}
+\@writefile{toc}{\contentsline {subsection}{Experimental Set-up}{1}{section*.2}\protected@file@percent }
+\newlabel{experimental-set-up}{{}{1}{Experimental Set-up}{section*.2}{}}
+\@writefile{toc}{\contentsline {subsection}{Shrub Counts}{1}{section*.3}\protected@file@percent }
+\newlabel{shrub-counts}{{}{1}{Shrub Counts}{section*.3}{}}
+\gdef \LT@i {\LT@entry 
+    {1}{68.02797pt}\LT@entry 
+    {1}{59.83368pt}\LT@entry 
+    {1}{64.2225pt}\LT@entry 
+    {1}{79.72278pt}}
+\@writefile{toc}{\contentsline {subsubsection}{Struggle Shrubs}{2}{section*.4}\protected@file@percent }
+\newlabel{struggle-shrubs}{{}{2}{Struggle Shrubs}{section*.4}{}}
+\@writefile{toc}{\contentsline {subsubsection}{Shrub Inventory}{6}{section*.5}\protected@file@percent }
+\newlabel{shrub-inventory}{{}{6}{Shrub Inventory}{section*.5}{}}
+\gdef \LT@ii {\LT@entry 
+    {1}{37.44455pt}\LT@entry 
+    {1}{58.44426pt}\LT@entry 
+    {2}{43.77777pt}}
+\@writefile{toc}{\contentsline {subsection}{Initial Shrub Sizes}{8}{section*.6}\protected@file@percent }
+\newlabel{initial-shrub-sizes}{{}{8}{Initial Shrub Sizes}{section*.6}{}}
+\@writefile{toc}{\contentsline {subsection}{Shrub Phenology}{12}{section*.7}\protected@file@percent }
+\newlabel{shrub-phenology}{{}{12}{Shrub Phenology}{section*.7}{}}
+\@writefile{toc}{\contentsline {subsection}{Shrub growth (biomass increase)}{15}{section*.8}\protected@file@percent }
+\newlabel{shrub-growth-biomass-increase}{{}{15}{Shrub growth (biomass increase)}{section*.8}{}}
+\@writefile{toc}{\contentsline {subsection}{Neighbors}{15}{section*.9}\protected@file@percent }
+\newlabel{neighbors}{{}{15}{Neighbors}{section*.9}{}}
+\@writefile{toc}{\contentsline {subsection}{Environmental Neighborhood of Shrublings}{15}{section*.10}\protected@file@percent }
+\newlabel{environmental-neighborhood-of-shrublings}{{}{15}{Environmental Neighborhood of Shrublings}{section*.10}{}}
+\gdef \@abspage@last{15}
