@@ -1,0 +1,79 @@
+Block.Plot,Treatment,BonusShrubs,Species
+1.1,W,A (good),A
+1.2,C,A117 (small),A
+1.5,S,A122 (topkill),A
+1.5,S,A120,A
+10.3,S,"A140(T,G)",A
+10.3,S,"A149(T,G)",A
+10.8,C,"A92(S,G)",A
+10.8,C,"A55(S,G)",A
+10.8,C,"A126(S,D)",A
+2.4,S,A103 (good),A
+2.4,S,A151 (asleep),A
+2.4,S,A29,A
+2.7,C,"A116(S,)",A
+2.7,C,"A108(tiny,)",A
+2.7,C,"A133(,G)",A
+3.2,C,A102 (tiny),A
+3.2,C,A62 (small),A
+3.2,C,A (med/good),A
+3.6,S,A106 (tiny),A
+3.6,S,A97 (dead-ish),A
+3.6,S,A109 (tiny),A
+4.5,C,"A115(S,G)",A
+4.5,C,"A135(S,G)",A
+5.3,S,A101(S),A
+5.3,S,"A31(BS,B)",A
+6.1,C,"A52(M,G)",A
+6.1,C,"A80(S,W)",A
+6.1,C,"A105(T,W)",A
+6.6,SW,"A121(M,G)",A
+6.6,SW,"A(S,G)",A
+6.6,SW,"A113(T,G)",A
+7.3,C,"A146(S,W)",A
+7.3,C,"A107(S,G)",A
+7.3,C,"A151(S,G)",A
+7.6,S,"A145(tiny,W)",A
+7.6,S,"A74(tiny,W)",A
+8.2,S,"A150(S,G)",A
+8.6,C,"A102(T,W)",A
+9.4,C,"A128(M,BS)",A
+9.4,C,"A137(S,G)",A
+9.4,C,"A123(M,D), A148(D)",A
+9.8,S,"A52(S,G)",A
+9.8,S,"A82(M,BS)",A
+9.8,S,"A147(T,G)",A
+9.8,S,"A138(T,G)",A
+1.1,W,B (tiny),B
+1.2,C,B (medium),B
+1.2,C,B (medium),B
+1.5,S,B,B
+1.5,S,B,B
+10.3,S,"Bp(M,D)",B
+10.8,C,"Bp(M,W)",B
+10.8,C,"Bw(S,G)",B
+10.8,C,"Bw(L,W)",B
+2.4,S,B (good),B
+2.7,C,"Bp(,G)",B
+2.7,C,"B(M,G)",B
+3.2,C,Bp (great!),B
+3.2,C,B (wimpy),B
+3.6,S,B (almost dead),B
+3.6,S,B (BIG),B
+4.5,C,"B(S,G)",B
+4.5,C,"B(M,G)",B
+5.3,S,B(dead),B
+6.1,C,"B(L,G but lengthy)",B
+6.1,C,"Bwire(S,W)",B
+6.6,SW,"B(M,G)",B
+6.6,SW,"B(M,G)",B
+7.3,C,"B(M,W)",B
+7.3,C,"Bp(B,G)",B
+7.6,S,"Bp(M,W)",B
+7.6,S,Bw(dead),B
+8.2,S,"B(M,G)",B
+8.6,C,"B(B,dead?)",B
+8.6,C,"Bp(M,G)",B
+9.8,S,"B(T,G)",B
+9.8,S,"Bp(M,F)",B
+1.1,W,S (transplant),S

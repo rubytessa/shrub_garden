@@ -111,7 +111,7 @@ snow_plot <- ggplot(snow, aes(x = julian_day, y = depth*2.54, color = factor(yea
   # annotate(geom = "text", x = 190, y = 50, label = "2021 snow free date:\n June 8", color = "blue") +
   ylab("Snow Depth (cm)") +
   xlab("Day of Year") +
-  gghighlight(year %in% c(2012,2022,2023), label_key = category)
+  gghighlight(year %in% c(2012:2023), label_key = category)
 
 ggplotly(snow_plot)
 

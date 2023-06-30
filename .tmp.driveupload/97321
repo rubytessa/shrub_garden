@@ -1,0 +1,253 @@
+---
+title: "shrubling_vitals"
+author: "Ruby An"
+date: "2023-06-18"
+output:
+  html_document: default
+  pdf_document: default
+  word_document: default
+editor_options:
+  chunk_output_type: console
+---
+
+
+
+## Description
+This code file plots data on focal shrubs planted in the shrub garden. 
+
+
+
+## Experimental Set-up
+This shows the set-up of the experiment and orients to the following graphs. 
+
+<img src="shrubling_vitals_2023_files/figure-html/unnamed-chunk-2-1.png" width="672" />
+
+
+## Shrub Counts 
+
+This code summarizes the number of shrubs found across all the plots. There is typically 1 alder, 2 birch, and 3 salix (transplant, trenched, natural) per plot. Some plots have 2 alders. Some plots have 3 birch. Some plots are missing a type of salix. 
+
+### Struggle Shrubs
+
+The following code plots the "struggle shrubs", noted in the inventory as "dead/questionable". Note that for retagging the shrubs, we chose the healthiest individuals, so these numbers will be an over-estimate of survival percentage. Nevertheless, we did try to tag at least 1 alder, 2 birch, and 3 kinds of salix in each plot. 
+
+TREATMENT DEATH: There are more sick shrubs in snow removal and nutrient addition plots. There are fewer sick shrubs inside OTC's. 
+
+PLOT DISTRIBUTION: All plots have 1-3 alders. All plots have 2-3 birch transplants. Salix are more spotty, with 11 plots are missing salix transplants. 6 plots are missing trenched salix. 5 plots are missing salix tagged as present. **note this will be updated when we check the suspicious salix inconsistencies. 
+
+From this information, we can't clearly rule out using one or another type of Salix origin. For this, we must assess size and vitality. 
+
+REPLANTING: I may need to replant 11 alder, 5 birch, and 9 salix. Only one S.connected and one S.trenched are dead, but I should check on the "retagging" situtation as I think we retagged quite a few S.trenched already so they are actually now S.connecteds. 
+
+
+|Block.Plot |Treatment |BonusShrubs        |Species |
+|:----------|:---------|:------------------|:-------|
+|1.1        |W         |A (good)           |A       |
+|1.2        |C         |A117 (small)       |A       |
+|1.5        |S         |A122 (topkill)     |A       |
+|1.5        |S         |A120               |A       |
+|10.3       |S         |A140(T,G)          |A       |
+|10.3       |S         |A149(T,G)          |A       |
+|10.8       |C         |A92(S,G)           |A       |
+|10.8       |C         |A55(S,G)           |A       |
+|10.8       |C         |A126(S,D)          |A       |
+|2.4        |S         |A103 (good)        |A       |
+|2.4        |S         |A151 (asleep)      |A       |
+|2.4        |S         |A29                |A       |
+|2.7        |C         |A116(S,)           |A       |
+|2.7        |C         |A108(tiny,)        |A       |
+|2.7        |C         |A133(,G)           |A       |
+|3.2        |C         |A102 (tiny)        |A       |
+|3.2        |C         |A62 (small)        |A       |
+|3.2        |C         |A (med/good)       |A       |
+|3.6        |S         |A106 (tiny)        |A       |
+|3.6        |S         |A97 (dead-ish)     |A       |
+|3.6        |S         |A109 (tiny)        |A       |
+|4.5        |C         |A115(S,G)          |A       |
+|4.5        |C         |A135(S,G)          |A       |
+|5.3        |S         |A101(S)            |A       |
+|5.3        |S         |A31(BS,B)          |A       |
+|6.1        |C         |A52(M,G)           |A       |
+|6.1        |C         |A80(S,W)           |A       |
+|6.1        |C         |A105(T,W)          |A       |
+|6.6        |SW        |A121(M,G)          |A       |
+|6.6        |SW        |A(S,G)             |A       |
+|6.6        |SW        |A113(T,G)          |A       |
+|7.3        |C         |A146(S,W)          |A       |
+|7.3        |C         |A107(S,G)          |A       |
+|7.3        |C         |A151(S,G)          |A       |
+|7.6        |S         |A145(tiny,W)       |A       |
+|7.6        |S         |A74(tiny,W)        |A       |
+|8.2        |S         |A150(S,G)          |A       |
+|8.6        |C         |A102(T,W)          |A       |
+|9.4        |C         |A128(M,BS)         |A       |
+|9.4        |C         |A137(S,G)          |A       |
+|9.4        |C         |A123(M,D), A148(D) |A       |
+|9.8        |S         |A52(S,G)           |A       |
+|9.8        |S         |A82(M,BS)          |A       |
+|9.8        |S         |A147(T,G)          |A       |
+|9.8        |S         |A138(T,G)          |A       |
+|1.1        |W         |B (tiny)           |B       |
+|1.2        |C         |B (medium)         |B       |
+|1.2        |C         |B (medium)         |B       |
+|1.5        |S         |B                  |B       |
+|1.5        |S         |B                  |B       |
+|10.3       |S         |Bp(M,D)            |B       |
+|10.8       |C         |Bp(M,W)            |B       |
+|10.8       |C         |Bw(S,G)            |B       |
+|10.8       |C         |Bw(L,W)            |B       |
+|2.4        |S         |B (good)           |B       |
+|2.7        |C         |Bp(,G)             |B       |
+|2.7        |C         |B(M,G)             |B       |
+|3.2        |C         |Bp (great!)        |B       |
+|3.2        |C         |B (wimpy)          |B       |
+|3.6        |S         |B (almost dead)    |B       |
+|3.6        |S         |B (BIG)            |B       |
+|4.5        |C         |B(S,G)             |B       |
+|4.5        |C         |B(M,G)             |B       |
+|5.3        |S         |B(dead)            |B       |
+|6.1        |C         |B(L,G but lengthy) |B       |
+|6.1        |C         |Bwire(S,W)         |B       |
+|6.6        |SW        |B(M,G)             |B       |
+|6.6        |SW        |B(M,G)             |B       |
+|7.3        |C         |B(M,W)             |B       |
+|7.3        |C         |Bp(B,G)            |B       |
+|7.6        |S         |Bp(M,W)            |B       |
+|7.6        |S         |Bw(dead)           |B       |
+|8.2        |S         |B(M,G)             |B       |
+|8.6        |C         |B(B,dead?)         |B       |
+|8.6        |C         |Bp(M,G)            |B       |
+|9.8        |S         |B(T,G)             |B       |
+|9.8        |S         |Bp(M,F)            |B       |
+|1.1        |W         |S (transplant)     |S       |
+
+
+
+| Block.Plot|Treatment |NewID |Vitality |Symptoms          | Length_max|Notes                                                                                           |
+|----------:|:---------|:-----|:--------|:-----------------|----------:|:-----------------------------------------------------------------------------------------------|
+|        1.1|W         |A1    |2        |BS                |        354|NA                                                                                              |
+|        1.1|W         |Sy1   |1        |NA                |         NA|first recorded                                                                                  |
+|        1.2|C         |A2    |2        |NA                |        345|6/17: 2 catkins                                                                                 |
+|        1.2|C         |B4    |2        |NA                |         46|NA                                                                                              |
+|        1.2|C         |S4    |2        |NA                |        133|NA                                                                                              |
+|        1.3|N         |B5    |2        |NA                |         58|NA                                                                                              |
+|        1.3|N         |B6    |2        |NA                |        183|NA                                                                                              |
+|        1.4|WN        |B7    |2        |ND                |         82|NA                                                                                              |
+|        1.6|SW        |A9    |2        |BS                |        300|6/9: top stem dead                                                                              |
+|        1.8|SN        |A11   |1        |NA                |        320|dead? -> leaves expanding at bottom                                                             |
+|        1.8|SN        |S16   |0        |ND                |         77|NA                                                                                              |
+|        2.2|SN        |B20   |2        |NA                |        141|NA                                                                                              |
+|        2.4|S         |A15   |1        |NA                |        204|dead. Move someone else?                                                                        |
+|        2.4|S         |Sy12  |1        |NA                |         50|dead?                                                                                           |
+|        2.7|C         |A19   |2        |BS                |        230|NA                                                                                              |
+|        3.1|WN        |B33   |2        |NA                |         45|NA                                                                                              |
+|        3.3|N         |A23   |2        |NA                |        130|sad :(                                                                                          |
+|        3.3|N         |S40   |0        |ND                |        140|6/19: wilted                                                                                    |
+|        3.5|SN        |Sy23  |2        |BS                |        160|dead - but 6/19 new buds at base                                                                |
+|        3.8|SWN       |B48   |2        |ND                |        200|NA                                                                                              |
+|        3.8|SWN       |S51   |2        |ND                |        155|NA                                                                                              |
+|        4.2|SW        |Sy30  |0        |death             |         NA|dead. beetle on corpse                                                                          |
+|        4.2|SW        |S55   |2        |Galls, IH         |         NA|galls! 6/17                                                                                     |
+|        4.5|C         |A36   |2        |NA                |        250|NA                                                                                              |
+|        4.6|W         |A38   |2        |NA                |        275|NA                                                                                              |
+|        4.7|N         |A39   |1        |NA                |        205|saddd alder                                                                                     |
+|        4.7|N         |S64   |1        |herbiv            |        115|NA                                                                                              |
+|        5.1|SN        |B65   |2        |one leaf          |         25|crunchy                                                                                         |
+|        5.3|S         |Sy39  |2        |NA                |         55|NA                                                                                              |
+|        5.4|SWN       |B71   |2        |just a few leaves |         95|near edge of OTC. 6/19: just a few leaves                                                       |
+|        5.5|N         |Sy42  |2        |NA                |         75|barely alive                                                                                    |
+|        5.6|WN        |Sy43  |2        |dead branch       |        130|NA                                                                                              |
+|        6.1|C         |B81   |1        |NA                |        125|dead?                                                                                           |
+|        6.2|WN        |S88   |2        |ND                |         90|NA                                                                                              |
+|        6.4|W         |B88   |2        |NA                |         50|NA                                                                                              |
+|        6.6|SW        |S97   |2        |NA                |        115|6/19: leaves wilting? could be an insect inside the expanding leaves that makes them look wilty |
+|        6.7|SN        |Sy50  |2        |ND                |        230|NA                                                                                              |
+|        6.8|S         |B100  |2        |NA                |        140|NA                                                                                              |
+|        7.3|C         |Sy30  |0        |dead              |         NA|dead                                                                                            |
+|        7.4|WN        |S108  |2        |NA                |         20|NA                                                                                              |
+|        7.5|SWN       |Sy57  |0        |Nutirent Damage   |         60|NA                                                                                              |
+|        7.6|S         |A66   |1        |deadish?          |        240|6/17: deadish                                                                                   |
+|        7.8|SN        |A69   |1        |low               |        220|not great                                                                                       |
+|        7.8|SN        |S118  |2        |low               |        110|dead?                                                                                           |
+|        8.4|SN        |Sy67  |1        |dead?             |        210|barely alive                                                                                    |
+|        8.5|N         |B128  |2        |Nutirent Damage   |        145|~1/3 of leaves brown                                                                            |
+|        8.5|N         |Sy65  |2        |Dead Branch       |        255|NA                                                                                              |
+|        8.8|W         |A79   |0        |dead              |        130|NA                                                                                              |
+|        9.2|W         |B138  |2        |NA                |         80|NA                                                                                              |
+|        9.3|WN        |A82   |1        |low               |        140|dead? bottom sprouts                                                                            |
+|        9.4|C         |A83   |2        |NA                |         75|NA                                                                                              |
+|        9.4|C         |S142  |2        |NA                |        145|NA                                                                                              |
+|        9.5|SN        |Sy79  |2        |dead              |         85|NA                                                                                              |
+|        9.6|SWN       |A85   |2        |NA                |        110|NA                                                                                              |
+|        9.6|SWN       |Sy75  |2        |NA                |         NA|NA                                                                                              |
+|        9.8|S         |Sy71  |2        |NA                |          1|soooo tiny                                                                                      |
+|       10.2|SN        |A90   |1        |NA                |         55|NA                                                                                              |
+|       10.3|S         |A93   |2        |NA                |         60|6/19: small leaves                                                                              |
+|       10.4|SWN       |S158  |1        |NA                |        100|NA                                                                                              |
+|       10.4|SWN       |Sy80  |1        |NA                |         45|NA                                                                                              |
+|       10.5|W         |A95   |1        |NA                |        110|dead                                                                                            |
+|       10.6|WN        |Sy84  |1        |dead              |         20|NA                                                                                              |
+|       10.7|N         |Sy86  |2        |NA                |         80|NA                                                                                              |
+|       10.8|C         |S166  |2        |NA                |        305|NA                                                                                              |
+
+
+
+|Species.Origin | sick_count| total_count| survival_percent|
+|:--------------|----------:|-----------:|----------------:|
+|A.transplant   |         19|         103|        0.8155340|
+|B.transplant   |         14|         165|        0.9151515|
+|S.connected    |          3|          76|        0.9605263|
+|S.transplant   |         18|          80|        0.7750000|
+|S.trenched     |         10|          82|        0.8780488|
+
+<img src="shrubling_vitals_2023_files/figure-html/unnamed-chunk-3-1.png" width="672" /><img src="shrubling_vitals_2023_files/figure-html/unnamed-chunk-3-2.png" width="672" /><img src="shrubling_vitals_2023_files/figure-html/unnamed-chunk-3-3.png" width="672" /><img src="shrubling_vitals_2023_files/figure-html/unnamed-chunk-3-4.png" width="672" /><img src="shrubling_vitals_2023_files/figure-html/unnamed-chunk-3-5.png" width="672" /><img src="shrubling_vitals_2023_files/figure-html/unnamed-chunk-3-6.png" width="672" />
+
+### Shrub Inventory
+We can than assess the number of shrubs doing relatively well in each of the plots. The goal is to have at least 10 shrubs per treatment. For now, things are going relatively OK!  
+
+<img src="shrubling_vitals_2023_files/figure-html/unnamed-chunk-4-1.png" width="672" /><img src="shrubling_vitals_2023_files/figure-html/unnamed-chunk-4-2.png" width="672" />
+
+
+## Initial Shrub Sizes
+
+We assessed the size of the shrubs to be able to standardize growth by initial biomass of each shrub. This will also help us know if we need to augment the experiment with any individuals by identifying short weaklings. 
+
+On average, alders were 15 cm, birch were 10 cm, and salix were 13 cm. There was substantial variation in the salix. I grouped alders by size when planting, and tried to distribute evenly across treatments with similarly sized individuals within a block. This is reflected in the collected data. 
+
+
+|Species | mean_size|       sd|
+|:-------|---------:|--------:|
+|A       |  15.28990| 8.339988|
+|B       |  10.05602| 3.720402|
+|S       |  13.95844| 7.751516|
+
+<img src="shrubling_vitals_2023_files/figure-html/unnamed-chunk-5-1.png" width="672" /><img src="shrubling_vitals_2023_files/figure-html/unnamed-chunk-5-2.png" width="672" /><img src="shrubling_vitals_2023_files/figure-html/unnamed-chunk-5-3.png" width="672" />
+
+## Shrub Phenology 
+
+This code plots the phenology for shrub transplants in 2023. We monitored for date of "buds breaking" and "leaves open". 
+<img src="shrubling_vitals_2023_files/figure-html/unnamed-chunk-6-1.png" width="672" /><img src="shrubling_vitals_2023_files/figure-html/unnamed-chunk-6-2.png" width="672" /><img src="shrubling_vitals_2023_files/figure-html/unnamed-chunk-6-3.png" width="672" /><img src="shrubling_vitals_2023_files/figure-html/unnamed-chunk-6-4.png" width="672" />
+
+
+## Shrub growth (biomass increase)
+
+- photosynthetic canopy area
+- new leaves, leaf size 
+
+- height 
+- new stems 
+- height relative to competitors 
+
+## Neighbors 
+
+- species ID of neighbors 
+- height and density of surrounding neighbors
+
+## Environmental Neighborhood of Shrublings
+
+- temperature, moisture
+- light environment 
+- nutrient availability 
+- maximum snow depth 
+
+

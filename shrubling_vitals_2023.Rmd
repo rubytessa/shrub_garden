@@ -3,9 +3,9 @@ title: "shrubling_vitals"
 author: "Ruby An"
 date: "2023-06-18"
 output:
-  word_document: default
-  pdf_document: default
   html_document: default
+  pdf_document: default
+  word_document: default
 editor_options:
   chunk_output_type: console
 ---
@@ -24,7 +24,7 @@ This code file plots data on focal shrubs planted in the shrub garden.
 
 ```{r}
 ## Files 
-treatment_key <- read_sheet("https://docs.google.com/spreadsheets/d/1PL6d-5xT28oVSgbeNmw1YzwA9chrVwz8SPmr5KjDAag/edit#gid=0", col_types = "dddcDllc") %>% 
+treatment_key <- read_sheet("https://docs.google.com/spreadsheets/d/1PL6d-5xT28oVSgbeNmw1YzwA9chrVwz8SPmr5KjDAag/edit#gid=0", col_types = "dddcDll") %>% 
   select(Block, Plot, Block.Plot, Treatment) %>% 
   mutate(Snow = str_detect(Treatment, "S"), 
          OTC = str_detect(Treatment, "W"),
@@ -93,9 +93,37 @@ From this information, we can't clearly rule out using one or another type of Sa
 REPLANTING: I may need to replant 11 alder, 5 birch, and 9 salix. Only one S.connected and one S.trenched are dead, but I should check on the "retagging" situtation as I think we retagged quite a few S.trenched already so they are actually now S.connecteds. 
 
 ```{r}
+
+## BONUS SHRUBS
+#(YOU NEED TO REARRANGE THE SHEETS FOR THIS, WILL FIX SOON)
+bonus_shrubs <- read_sheet("https://docs.google.com/spreadsheets/d/1PL6d-5xT28oVSgbeNmw1YzwA9chrVwz8SPmr5KjDAag/edit#gid=2120499410", sheet =2)
+
+bonus_list <- bonus_shrubs %>% select(Block.Plot, Treatment, BonusShrubs) %>% 
+  filter(!is.na(BonusShrubs)) %>% 
+  separate_longer_delim(BonusShrubs, delim=";") %>% 
+  mutate(BonusShrubs = str_trim(BonusShrubs)) %>% 
+  mutate(Species = substr(BonusShrubs, 1,1)) %>% 
+  arrange(Species, Block.Plot)
+
+kable(bonus_list)
+#write_csv(bonus_list, "bonus_shrub_list.csv")
+
+
 # Sick Shrubs 
-struggle_shrubs <- clean_data %>% filter(!is.na(Vitality)) %>% 
-  select(Block.Plot, NewID, Vitality, everything())
+struggle_shrubs <- clean_data %>% filter(Vitality <= 2) %>%
+  select(Block.Plot, NewID, Vitality, Symptoms, Treatment, Length_max, everything()) %>% 
+  arrange(Block.Plot, Species,Vitality,Treatment) 
+
+struggle_shrubs %>% 
+  select(Block.Plot, Treatment, NewID, Vitality, Symptoms, Length_max,Notes) %>% kable()
+
+#write_csv(struggle_shrubs, "struggle_shrub_list.csv")
+
+# Sick List 
+
+# sick_list <- shrub_inventory %>% filter(Vitality <=2) %>% select(Block.Plot, Treatment, NewID, Length_max, Vitality, Symptoms, Species) %>% arrange(Species, Treatment, Block.Plot, Vitality) 
+# 
+# #write_csv(sick_list, "sick_list_vit_less_2.csv")
 
 # Sick Table
 treatment_count <- clean_data %>% group_by(Species, Treatment) %>% 
@@ -119,6 +147,11 @@ struggle_shrubs %>%
   labs(title = "Struggle Shrubs", x = "Plot", y = "Block") + 
   scale_fill_discrete(name = "Species")
 
+# Sick Shrubs by Treatment
+ggplot(struggle_shrubs) + 
+  geom_histogram(aes(x = factor(Treatment), fill = Species), stat = "count") + 
+  labs(x = "Block", y = "Sick Count", title = "Sick Shrubs by Treatment")
+
 ## Sick Shrubs by Block
 ggplot(struggle_shrubs) + 
   geom_histogram(aes(x = factor(Block), fill = Species), stat = "count") + 
@@ -140,18 +173,18 @@ ggplot(struggle_shrubs) +
 We can than assess the number of shrubs doing relatively well in each of the plots. The goal is to have at least 10 shrubs per treatment. For now, things are going relatively OK!  
 
 ```{r}
-shrub_inventory <- clean_data %>%
-  filter(is.na(Vitality))# filter(Length_max <= 50)
+shrub_inventory <- clean_data %>% filter(!is.na(Vitality))
 
 ## TABLE BY TREATMENT
 ggplot(shrub_inventory) + 
-  geom_histogram(aes(x=Treatment, fill = Origin), stat = "count", position = "dodge") + 
-  geom_hline(yintercept = 10) + 
+  geom_histogram(aes(x=factor(Block), fill = Vitality), stat = "count", position = "stack") + 
+  geom_hline(yintercept = 8) + 
   facet_wrap(vars(Species)) + 
-  labs(title = "Number of shrubs per treatment")
+  labs(title = "Number of shrubs per Block")
 
 ## PLOT MAPS
 shrub_inventory %>% 
+  filter(!Species.Origin %in% c("S.unknown", "B.unknown")) %>% 
   group_by(Block, Plot, Species.Origin) %>% 
   summarize(count = n()) %>%
   ungroup() %>% 
