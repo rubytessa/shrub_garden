@@ -1,0 +1,65 @@
+Species,Species.Origin,Treatment,Block.Plot,count,Count.Vitality,NewID,Vitality,Symptoms,Length_max,Notes
+A,A.transplant,C,2.7,1,1.2,A19,2,BS,230,NA
+A,A.transplant,C,9.4,1,1.2,A83,2,NA,75,NA
+A,A.transplant,C,1.2,2,2.2,A2,2,NA,345,6/17: 2 catkins
+A,A.transplant,C,4.5,2,2.2,A36,2,NA,250,NA
+A,A.transplant,N,4.7,1,1.1,A39,1,NA,205,saddd alder
+A,A.transplant,N,3.3,1,1.2,A23,2,NA,130,sad :(
+A,A.transplant,S,2.4,2,2.1,A15,1,NA,204,dead. Move someone else?
+A,A.transplant,S,7.6,2,2.1,A66,1,deadish?,240,6/17: deadish
+A,A.transplant,S,10.3,2,2.2,A93,2,NA,60,6/19: small leaves
+A,A.transplant,SN,1.8,1,1.1,A11,1,NA,320,dead? -> leaves expanding at bottom
+A,A.transplant,SN,7.8,1,1.1,A69,1,low,220,not great
+A,A.transplant,SN,10.2,2,2.1,A90,1,NA,55,NA
+A,A.transplant,SW,1.6,1,1.2,A9,2,BS,300,6/9: top stem dead
+A,A.transplant,SWN,9.6,1,1.2,A85,2,NA,110,NA
+A,A.transplant,W,8.8,1,1.0,A79,0,dead,130,NA
+A,A.transplant,W,1.1,1,1.2,A1,2,BS,354,NA
+A,A.transplant,W,4.6,1,1.2,A38,2,NA,275,NA
+A,A.transplant,W,10.5,2,2.1,A95,1,NA,110,dead
+A,A.transplant,WN,9.3,1,1.1,A82,1,low,140,dead? bottom sprouts
+B,B.transplant,C,6.1,2,2.1,B81,1,NA,125,dead?
+B,B.transplant,C,1.2,2,2.2,B4,2,NA,46,NA
+B,B.transplant,N,1.3,2,2.2,B5,2,NA,58,NA
+B,B.transplant,N,1.3,2,2.2,B6,2,NA,183,NA
+B,B.transplant,N,8.5,2,2.2,B128,2,Nutirent Damage,145,~1/3 of leaves brown
+B,B.transplant,S,6.8,3,3.2,B100,2,NA,140,NA
+B,B.transplant,SN,2.2,2,2.2,B20,2,NA,141,NA
+B,B.transplant,SN,5.1,2,2.2,B65,2,one leaf,25,crunchy
+B,B.transplant,SWN,3.8,2,2.2,B48,2,ND,200,NA
+B,B.transplant,SWN,5.4,2,2.2,B71,2,just a few leaves,95,near edge of OTC. 6/19: just a few leaves
+B,B.transplant,W,9.2,2,2.2,B138,2,NA,80,NA
+B,B.transplant,W,6.4,3,3.2,B88,2,NA,50,NA
+B,B.transplant,WN,1.4,2,2.2,B7,2,ND,82,NA
+B,B.transplant,WN,3.1,2,2.2,B33,2,NA,45,NA
+S,S.connected,SW,4.2,1,1.2,S55,2,"Galls, IH",NA,galls! 6/17
+S,S.connected,SW,6.6,1,1.2,S97,2,NA,115,6/19: leaves wilting? could be an insect inside the expanding leaves that makes them look wilty
+S,S.connected,SWN,3.8,1,1.2,S51,2,ND,155,NA
+S,S.transplant,C,7.3,1,1.0,Sy30,0,dead,NA,dead
+S,S.transplant,N,5.5,1,1.2,Sy42,2,NA,75,barely alive
+S,S.transplant,N,8.5,1,1.2,Sy65,2,Dead Branch,255,NA
+S,S.transplant,N,10.7,1,1.2,Sy86,2,NA,80,NA
+S,S.transplant,S,2.4,1,1.1,Sy12,1,NA,50,dead?
+S,S.transplant,S,5.3,1,1.2,Sy39,2,NA,55,NA
+S,S.transplant,S,9.8,1,1.2,Sy71,2,NA,1,soooo tiny
+S,S.transplant,SN,8.4,1,1.1,Sy67,1,dead?,210,barely alive
+S,S.transplant,SN,3.5,1,1.2,Sy23,2,BS,160,dead - but 6/19 new buds at base
+S,S.transplant,SN,6.7,1,1.2,Sy50,2,ND,230,NA
+S,S.transplant,SN,9.5,1,1.2,Sy79,2,dead,85,NA
+S,S.transplant,SW,4.2,1,1.0,Sy30,0,death,NA,dead. beetle on corpse
+S,S.transplant,SWN,7.5,1,1.0,Sy57,0,Nutirent Damage,60,NA
+S,S.transplant,SWN,10.4,1,1.1,Sy80,1,NA,45,NA
+S,S.transplant,SWN,9.6,1,1.2,Sy75,2,NA,NA,NA
+S,S.transplant,W,1.1,1,1.1,Sy1,1,NA,NA,first recorded
+S,S.transplant,WN,10.6,1,1.1,Sy84,1,dead,20,NA
+S,S.transplant,WN,5.6,1,1.2,Sy43,2,dead branch,130,NA
+S,S.trenched,C,1.2,1,1.2,S4,2,NA,133,NA
+S,S.trenched,C,9.4,1,1.2,S142,2,NA,145,NA
+S,S.trenched,C,10.8,1,1.2,S166,2,NA,305,NA
+S,S.trenched,N,3.3,1,1.0,S40,0,ND,140,6/19: wilted
+S,S.trenched,N,4.7,1,1.1,S64,1,herbiv,115,NA
+S,S.trenched,SN,1.8,1,1.0,S16,0,ND,77,NA
+S,S.trenched,SN,7.8,1,1.2,S118,2,low,110,dead?
+S,S.trenched,SWN,10.4,1,1.1,S158,1,NA,100,NA
+S,S.trenched,WN,6.2,1,1.2,S88,2,ND,90,NA
+S,S.trenched,WN,7.4,1,1.2,S108,2,NA,20,NA

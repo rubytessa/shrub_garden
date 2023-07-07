@@ -112,3 +112,4 @@ ggplot(temp_hour, aes(x=hour, y=average, color = Treatment)) +
 
 temp_diff %>% group_by(Variable) %>% 
   summarize(mean = mean(diff_temp))
+

@@ -80,6 +80,94 @@ ggplot(clean_data, aes(x=factor(Plot), y = factor(Block))) +
 
 This code summarizes the number of shrubs found across all the plots. There is typically 1 alder, 2 birch, and 3 salix (transplant, trenched, natural) per plot. Some plots have 2 alders. Some plots have 3 birch. Some plots are missing a type of salix. 
 
+### Shrub Inventory
+We can than assess the number of shrubs doing relatively well in each of the plots. The goal is to have at least 10 shrubs per treatment. For now, things are going relatively OK!  
+
+```{r}
+shrub_inventory <- clean_data %>% filter(!is.na(Vitality))
+
+## TABLE BY TREATMENT
+ggplot(shrub_inventory) + 
+  geom_histogram(aes(x=Treatment, fill = Vitality), stat = "count", position = "stack") + 
+  geom_hline(yintercept = 8) + 
+  facet_wrap(vars(Species)) + 
+  labs(title = "Number of shrubs per Treatment")
+
+## TABLE BY BLOCK
+ggplot(shrub_inventory) + 
+  geom_histogram(aes(x=factor(Block), fill = Vitality), stat = "count", position = "stack") + 
+  geom_hline(yintercept = 8) + 
+  facet_wrap(vars(Species)) + 
+  labs(title = "Number of shrubs per Block")
+
+## INVENTORY LIST
+
+plot_count <- shrub_inventory %>% 
+  filter(!Species.Origin %in% c("S.unknown", "B.unknown")) %>% 
+  group_by(Block, Plot, Species.Origin) %>% 
+  summarize(count = n()) %>%
+  ungroup() %>% 
+  complete(Block, Plot, Species.Origin, fill = list(count = 0)) %>% 
+  ## Remake useful columns
+  mutate(Species = substr(Species.Origin, 1,1)) %>% 
+  left_join(treatment_key) %>% 
+  select(Species, Species.Origin, Treatment, Block.Plot, count) %>% 
+  arrange(Species.Origin, Treatment, count)
+
+## plots with 1 or less shrubs, which is struggling
+plot_count %>% filter(count <= 1) %>% 
+  left_join(struggle_shrubs) %>% 
+  select(Species, Species.Origin, Treatment, Block.Plot, count, NewID, Vitality, Symptoms, Length_max, Notes) %>% 
+  arrange(Species.Origin, Treatment, count, Vitality) %>% 
+  print(n=300)
+
+## List of struggle shrubs 
+struggle_list <- struggle_shrubs %>% left_join(plot_count) %>%
+  mutate(Count.Vitality = str_c(count, ".", Vitality)) %>% 
+  arrange(Species.Origin, Treatment, Count.Vitality) %>% 
+  select(Species, Species.Origin, Treatment, Block.Plot, count, Count.Vitality, NewID, Vitality, Symptoms, Length_max, Notes) 
+
+
+write_csv(struggle_list, "struggle_list_ordered.csv")
+  
+## PLOT MAPS
+shrub_inventory %>% 
+  filter(!Species.Origin %in% c("S.unknown", "B.unknown")) %>% 
+  group_by(Block, Plot, Species.Origin) %>% 
+  summarize(count = n()) %>%
+  ungroup() %>% 
+  complete(Block, Plot, Species.Origin, fill = list(count = 0)) %>% 
+  mutate(Block.Plot = str_c(Block, ".", Plot)) %>% 
+  
+  # viz
+  ggplot(aes(x=factor(Plot), y = factor(Block))) + 
+  geom_tile(aes(fill = factor(count))) + 
+    geom_text(aes(label = Block.Plot)) + 
+  scale_fill_manual(name = "Count", values = c("white", "skyblue", "blue", "darkblue")) + 
+  facet_wrap(vars(Species.Origin)) + 
+  labs(x = "Plot", y = "Block", title = "Number of shrubs per plot") 
+
+
+## PLOT LOCATION OF VERY SMALL SHRUBS
+
+## TABLES 
+# ## count shrubs of each type in each plot
+# plot_count <- clean_data %>% 
+#   group_by(Block, Plot, Species, Origin) %>% 
+#   summarize(count = n()) %>% 
+#   pivot_wider(names_from = Plot, values_from = count) %>% 
+#   select(Species, Origin, Block, everything())
+# 
+# ## alder count
+# plot_count %>% filter(Species == "A") %>% kable()
+# plot_count %>% filter(Species == "B") %>% kable()
+# plot_count %>% filter(Species == "S" & Origin == "transplant") %>% kable()
+# plot_count %>% filter(Species == "S" & Origin == "trenched") %>% kable()
+# plot_count %>% filter(Species == "S" & Origin == "connected") %>% kable()
+```
+
+
+
 ### Struggle Shrubs
 
 The following code plots the "struggle shrubs", noted in the inventory as "dead/questionable". Note that for retagging the shrubs, we chose the healthiest individuals, so these numbers will be an over-estimate of survival percentage. Nevertheless, we did try to tag at least 1 alder, 2 birch, and 3 kinds of salix in each plot. 
@@ -94,28 +182,14 @@ REPLANTING: I may need to replant 11 alder, 5 birch, and 9 salix. Only one S.con
 
 ```{r}
 
-## BONUS SHRUBS
-#(YOU NEED TO REARRANGE THE SHEETS FOR THIS, WILL FIX SOON)
-bonus_shrubs <- read_sheet("https://docs.google.com/spreadsheets/d/1PL6d-5xT28oVSgbeNmw1YzwA9chrVwz8SPmr5KjDAag/edit#gid=2120499410", sheet =2)
-
-bonus_list <- bonus_shrubs %>% select(Block.Plot, Treatment, BonusShrubs) %>% 
-  filter(!is.na(BonusShrubs)) %>% 
-  separate_longer_delim(BonusShrubs, delim=";") %>% 
-  mutate(BonusShrubs = str_trim(BonusShrubs)) %>% 
-  mutate(Species = substr(BonusShrubs, 1,1)) %>% 
-  arrange(Species, Block.Plot)
-
-kable(bonus_list)
-#write_csv(bonus_list, "bonus_shrub_list.csv")
-
-
 # Sick Shrubs 
 struggle_shrubs <- clean_data %>% filter(Vitality <= 2) %>%
   select(Block.Plot, NewID, Vitality, Symptoms, Treatment, Length_max, everything()) %>% 
   arrange(Block.Plot, Species,Vitality,Treatment) 
 
 struggle_shrubs %>% 
-  select(Block.Plot, Treatment, NewID, Vitality, Symptoms, Length_max,Notes) %>% kable()
+  select(Block.Plot, Treatment, Species, NewID, Vitality, Symptoms, Length_max,Notes) %>% 
+  arrange(Species, Treatment, Vitality, Block.Plot)
 
 #write_csv(struggle_shrubs, "struggle_shrub_list.csv")
 
@@ -169,53 +243,23 @@ ggplot(struggle_shrubs) +
 
 ```
 
-### Shrub Inventory
-We can than assess the number of shrubs doing relatively well in each of the plots. The goal is to have at least 10 shrubs per treatment. For now, things are going relatively OK!  
 
+## List of Bonus Shrubs
 ```{r}
-shrub_inventory <- clean_data %>% filter(!is.na(Vitality))
+## BONUS SHRUBS
+#(YOU NEED TO REARRANGE THE SHEETS FOR THIS, WILL FIX SOON)
+bonus_shrubs <- read_sheet("https://docs.google.com/spreadsheets/d/1PL6d-5xT28oVSgbeNmw1YzwA9chrVwz8SPmr5KjDAag/edit#gid=2120499410", sheet =2)
 
-## TABLE BY TREATMENT
-ggplot(shrub_inventory) + 
-  geom_histogram(aes(x=factor(Block), fill = Vitality), stat = "count", position = "stack") + 
-  geom_hline(yintercept = 8) + 
-  facet_wrap(vars(Species)) + 
-  labs(title = "Number of shrubs per Block")
+bonus_list <- bonus_shrubs %>% select(Block.Plot, Treatment, BonusShrubs) %>%
+  filter(!is.na(BonusShrubs)) %>% 
+  separate_longer_delim(BonusShrubs, delim=";") %>% 
+  mutate(BonusShrubs = str_trim(BonusShrubs)) %>% 
+  mutate(Species = substr(BonusShrubs, 1,1)) %>% 
+  separate(BonusShrubs, into = c("ID", "Size", "Health")) %>% 
+  arrange(Species,Size,Health,Block.Plot)
 
-## PLOT MAPS
-shrub_inventory %>% 
-  filter(!Species.Origin %in% c("S.unknown", "B.unknown")) %>% 
-  group_by(Block, Plot, Species.Origin) %>% 
-  summarize(count = n()) %>%
-  ungroup() %>% 
-  complete(Block, Plot, Species.Origin, fill = list(count = 0)) %>% 
-  mutate(Block.Plot = str_c(Block, ".", Plot)) %>% 
-  
-  # viz
-  ggplot(aes(x=factor(Plot), y = factor(Block))) + 
-  geom_tile(aes(fill = factor(count))) + 
-    geom_text(aes(label = Block.Plot)) + 
-  scale_fill_manual(name = "Count", values = c("white", "skyblue", "blue", "darkblue")) + 
-  facet_wrap(vars(Species.Origin)) + 
-  labs(x = "Plot", y = "Block", title = "Number of shrubs per plot") 
-
-
-## PLOT LOCATION OF VERY SMALL SHRUBS
-
-## TABLES 
-# ## count shrubs of each type in each plot
-# plot_count <- clean_data %>% 
-#   group_by(Block, Plot, Species, Origin) %>% 
-#   summarize(count = n()) %>% 
-#   pivot_wider(names_from = Plot, values_from = count) %>% 
-#   select(Species, Origin, Block, everything())
-# 
-# ## alder count
-# plot_count %>% filter(Species == "A") %>% kable()
-# plot_count %>% filter(Species == "B") %>% kable()
-# plot_count %>% filter(Species == "S" & Origin == "transplant") %>% kable()
-# plot_count %>% filter(Species == "S" & Origin == "trenched") %>% kable()
-# plot_count %>% filter(Species == "S" & Origin == "connected") %>% kable()
+kable(bonus_list)
+write_csv(bonus_list, "bonus_shrub_list.csv")
 ```
 
 
@@ -291,7 +335,6 @@ ggplot() +
 
 This code plots the phenology for shrub transplants in 2023. We monitored for date of "buds breaking" and "leaves open". 
 ```{r}
-
 phase_data <- clean_data %>% 
   pivot_longer(cols = "BB":"LO", 
                names_to = "Phase", 
