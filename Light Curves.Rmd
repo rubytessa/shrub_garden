@@ -1,0 +1,71 @@
+---
+title: "licor values from 07/03 testing"
+output: html_document
+date: "2023-07-07"
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(readr)
+library(googlesheets4)
+
+```
+
+#Reading the files (as csv's)
+````{r}
+#read the files into a table
+licor_data <- "licor_data"
+files <- list.files(path= licor_data, pattern = "*csv$", full.names = T)
+
+#function that reads the files and names the column by species 
+read_licor <- function(file) {
+  data <- read_csv(file)
+  #renames columns
+  colnames <- data[8,]
+  colnames(data) <- colnames
+  #selects only the columns we are interested in 
+  final_data <- data[!is.na(as.numeric(data$Obs)),] %>% 
+    mutate(file = file) %>% 
+    select(file, everything()) 
+  
+  return(final_data)
+}
+
+#runs through the function
+licor_stats <-map_dfr(files, read_licor)
+
+#removes the folder name and the .csv from the column names 
+licor_stats <- licor_stats %>% separate(file, c("folder","sample"), sep = '/', convert =TRUE)
+licor_stats$sample <- sub(".csv$", "", licor_stats$sample)
+licor_stats$folder <- NULL
+```
+
+#Merging the leaf area with the licor data 
+```{r}
+leaf_area <- read_sheet("https://docs.google.com/spreadsheets/d/1Dc6jcSif2uS60duhhW-otpw1d_-hjRBwyLXJXkQrjb4/edit?usp=drive_web&ouid=112892526632401639702")
+
+#merging them together 
+licor_merge <- left_join(licor_stats,leaf_area)
+
+#changing the values needed into numbers 
+licor_merge$Area <- as.numeric(licor_merge$Area)
+licor_merge$Photo <- as.numeric(licor_merge$Photo)
+licor_merge$PARi <- as.numeric(licor_merge$PARi)
+
+#final stat
+final_licor_stats <- licor_merge %>% mutate(Corrected_Photo = Photo*(Area/area_cm2))
+```
+
+#Prelimnary plotting of Light Curves 
+```{r}
+ggplot(final_licor_stats) + 
+  geom_line(aes(x = PARi, y= Corrected_Photo, group = sample, color = sample))+ 
+  geom_point(aes(x = PARi, y= Corrected_Photo, group = as.factor(sample), color = sample)) + 
+  label
+  
+```
+
+
